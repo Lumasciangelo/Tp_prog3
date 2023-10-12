@@ -25,7 +25,7 @@ class UniformCostSearch:
         explored = {} 
         
         # Add the node to the explored dictionary
-        explored[node.state] = True
+        explored[node.state] = 0
         
         while True:
              #  Fail if the frontier is empty
@@ -46,7 +46,7 @@ class UniformCostSearch:
                     new_node = Node("", new_state, new_cost,
                                      parent=node, action=movimiento)
                     
-                    explored[new_state] = True
+                    explored[new_state] = new_cost #guardamos el costo porque necesitamos compararlo con el anterior
             
                     frontier.add(new_node, new_cost)
 
